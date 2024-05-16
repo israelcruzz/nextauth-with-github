@@ -1,3 +1,4 @@
+import { LoginButtonGithub } from "@/components/login-button-github";
 import Image from "next/image";
 
 export default function Home() {
@@ -25,16 +26,7 @@ export default function Home() {
         </p>
       </div>
 
-      <button className="mt-8 px-4 py-3 xl:px-6 xl:py-5 gap-6 bg-[#1E1E1E] text-white flex items-center justify-center rounded-lg text-xs xl:text-2xl hover:bg-[#1e1e1eee]">
-        <Image
-          src="/github-icon.svg"
-          width={38}
-          height={38}
-          quality={100}
-          alt=""
-        />
-        Login com GitHub
-      </button>
+      <LoginButtonGithub />
     </main>
   );
 }
