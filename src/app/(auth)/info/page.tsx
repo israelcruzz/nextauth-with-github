@@ -17,16 +17,17 @@ export default async function Profile() {
     <main className="w-full min-h-screen flex flex-col  items-center gap-6 p-12">
       <div className="flex flex-col justify-center items-center">
         <Image
-          src="/default-avatar.svg"
+          src={session.user?.avatar ?? "/default-avatar.svg"}
           alt=""
           quality={100}
           width={108}
           height={108}
+          className="rounded-full"
         />
 
         <h1 className="text-[#1E1E1E] text-6xl font-normal mt-4">
           Boas vindas,
-          <span className="font-bold"> Fulano de tal</span>
+          <span className="font-bold"> {session.user?.name}</span>
         </h1>
 
         <p className="font-light text-3xl text-[#5A5A5A] mt-4">
