@@ -1,3 +1,4 @@
+import { GitItem } from "@/components/git-item";
 import { LogoutButtonGithub } from "@/components/logout-button-github";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,45 +27,9 @@ export default function Profile() {
 
       <div className="w-full grid grid-cols-1 xl:grid-cols-2">
         <section className="w-full flex flex-col">
-          <Link
-            href="/"
-            className="flex w-full justify-between items-center py-6 border-t  border-[#BFBFBF]"
-          >
-            <h1 className="text-xl font-normal">Meus Repositórios (5)</h1>
-            <Image
-              src="/link-git.svg"
-              width={24}
-              height={24}
-              quality={100}
-              alt=""
-            />
-          </Link>
-          <Link
-            href="/"
-            className="flex w-full justify-between items-center py-6 border-t  border-[#BFBFBF]"
-          >
-            <h1 className="text-xl font-normal">Meus Repositórios (5)</h1>
-            <Image
-              src="/link-git.svg"
-              width={24}
-              height={24}
-              quality={100}
-              alt=""
-            />
-          </Link>
-          <Link
-            href="/"
-            className="flex w-full justify-between items-center py-6 border-t  border-[#BFBFBF]"
-          >
-            <h1 className="text-xl font-normal">Meus Repositórios (5)</h1>
-            <Image
-              src="/link-git.svg"
-              width={24}
-              height={24}
-              quality={100}
-              alt=""
-            />
-          </Link>
+          <GitItem title="Meus Repositórios" count={5} url="" />
+          <GitItem title="Meus Gists" count={5} url="" />
+          <GitItem title="Meus Seguidores" count={5} url="" />
 
           <LogoutButtonGithub />
         </section>
