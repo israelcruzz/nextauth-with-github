@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto Next.js com Autenticação NextAuth com o Github
 
-## Getting Started
+Este projeto utiliza Next.js e NextAuth para implementar autenticação. Após o login bem-sucedido, o usuário é redirecionado para uma página de perfil que exibe a foto de perfil, repositórios, gists e seguidores do GitHub, com links para os dados em formato JSON.
 
-First, run the development server:
+## Telas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Login:**
+  <img src="/my-app/src/assets/images/thumb.png" />
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Perfil:**
+  <img src="/my-app/src/assets/images/thumb-info.png" />
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Autenticação:** Implementada via NextAuth, permitindo login seguro.
+- **Tela de Login:** Página dedicada para os usuários se autenticarem.
+- **Perfil do Usuário:** Página que exibe:
+  - **Foto de Perfil:** Imagem do perfil do GitHub.
+  - **Repositórios:** Lista de repositórios do GitHub.
+  - **Gists:** Lista de gists do GitHub.
+  - **Seguidores:** Lista de seguidores do GitHub.
+- **Links para Dados em JSON:** Cada seção (repositórios, gists e seguidores) inclui um link para os dados em formato JSON diretamente da API do GitHub.
 
-## Learn More
+## Tecnologias Utilizadas
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js:** Framework React para desenvolvimento web.
+- **NextAuth:** Biblioteca para autenticação em Next.js.
+- **Tailwind CSS:** Utilizado para estilização (opcional).
+- **Axios ou fetch API:** Para fazer chamadas à API do GitHub.
+- **GitHub API:** Para obter dados do perfil do usuário autenticado.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Pré-requisitos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Node.js:** Ambiente de execução JavaScript.
+- **NPM ou Yarn:** Gerenciadores de pacotes.
+- **Conta no GitHub:** Necessária para autenticação e obtenção de dados.
+- **Credenciais OAuth do GitHub:** Necessárias para configuração do NextAuth.
 
-## Deploy on Vercel
+## Instalação
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone o Repositório:** Faça o clone do repositório para sua máquina local.
+2. **Instale as Dependências:** Utilize NPM ou Yarn para instalar todas as dependências necessárias.
+3. **Configure as Variáveis de Ambiente:** Crie um arquivo `.env.local` e adicione as variáveis necessárias para o NextAuth e GitHub.
+4. **Execute o Projeto:** Inicie o servidor de desenvolvimento para ver o projeto em ação.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Configuração do NextAuth
+
+Configurar o NextAuth é essencial para a autenticação. As credenciais do GitHub (client ID e client secret) devem ser configuradas corretamente nas variáveis de ambiente.
+
+## Estrutura do Projeto
+
+O projeto segue a estrutura padrão do Next.js com pastas para páginas, API, estilos e configurações adicionais.
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues para reportar problemas ou enviar pull requests com melhorias e correções.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+
+---
+
+Este readme fornece uma visão geral do projeto, suas funcionalidades, tecnologias utilizadas, requisitos, etapas de instalação, configuração e como contribuir. Sinta-se à vontade para personalizá-lo conforme necessário para atender às especificidades do seu projeto.
