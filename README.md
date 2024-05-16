@@ -5,9 +5,11 @@ Este projeto utiliza Next.js e NextAuth para implementar autenticação. Após o
 ## Telas
 
 - **Login:**
+
   <img src="https://github.com/israelcruzz/nextauth-with-github/blob/main/public/thumb.png" width="100%" height="100%" />
 
 - **Perfil:**
+
   <img src="https://github.com/israelcruzz/nextauth-with-github/blob/main/public/thumb-info.png" width="100%" height="100%" />
 
 ## Funcionalidades
