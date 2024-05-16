@@ -13,8 +13,6 @@ export default async function Home() {
   const session = await getServerSession(nextAuthConfig);
 
   if (session) {
-    console.log(session);
-
     redirect("/info");
   }
 

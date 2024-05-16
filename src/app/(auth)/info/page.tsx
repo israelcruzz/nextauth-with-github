@@ -1,9 +1,14 @@
 import { GitItem } from "@/components/git-item";
 import { LogoutButtonGithub } from "@/components/logout-button-github";
 import { nextAuthConfig } from "@/lib/next-auth-option/next-auth-option";
+import { Metadata } from "next";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+    title: "Infos",
+  };
 
 export default async function Profile() {
   const session = await getServerSession(nextAuthConfig);
