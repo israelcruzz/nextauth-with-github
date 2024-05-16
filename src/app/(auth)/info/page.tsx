@@ -3,7 +3,6 @@ import { LogoutButtonGithub } from "@/components/logout-button-github";
 import { nextAuthConfig } from "@/lib/next-auth-option/next-auth-option";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function Profile() {
@@ -13,11 +12,24 @@ export default async function Profile() {
     redirect("/");
   }
 
+  const countGitsRepo =
+    session.user.githubProfile.public_repos +
+    (session.user.githubProfile.total_private_repos ?? 0);
+  const urlRepos = session.user.githubProfile.repos_url;
+
+  const gistCount =
+    session.user.githubProfile.public_gists +
+    (session.user.githubProfile.private_gists ?? 0);
+  const gistUrl = session.user.githubProfile.gists_url;
+
+  const followersCount = session.user.githubProfile.followers;
+  const followersUrl = session.user.githubProfile.followers_url;
+
   return (
     <main className="w-full min-h-screen flex flex-col  items-center gap-6 p-12">
       <div className="flex flex-col justify-center items-center">
         <Image
-          src={session.user?.avatar ?? "/default-avatar.svg"}
+          src={session.user?.githubProfile.avatar_url ?? "/default-avatar.svg"}
           alt=""
           quality={100}
           width={108}
@@ -37,9 +49,17 @@ export default async function Profile() {
 
       <div className="w-full grid grid-cols-1 xl:grid-cols-2">
         <section className="w-full flex flex-col">
-          <GitItem title="Meus Repositórios" count={5} url="" />
-          <GitItem title="Meus Gists" count={5} url="" />
-          <GitItem title="Meus Seguidores" count={5} url="" />
+          <GitItem
+            title="Meus Repositórios"
+            count={countGitsRepo}
+            url={urlRepos}
+          />
+          <GitItem title="Meus Gists" count={gistCount} url={gistUrl} />
+          <GitItem
+            title="Meus Seguidores"
+            count={followersCount}
+            url={followersUrl}
+          />
 
           <LogoutButtonGithub />
         </section>
