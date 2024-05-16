@@ -5,10 +5,10 @@ Este projeto utiliza Next.js e NextAuth para implementar autenticação. Após o
 ## Telas
 
 - **Login:**
-  <img src="/my-app/src/assets/images/thumb.png" />
+  <img src="/my-app/public/thumb.png" width="100%" height="100%" />
 
 - **Perfil:**
-  <img src="/my-app/src/assets/images/thumb-info.png" />
+  <img src="/my-app/src/assets/images/thumb-info.png" width="100%" height="100%" />
 
 ## Funcionalidades
 
