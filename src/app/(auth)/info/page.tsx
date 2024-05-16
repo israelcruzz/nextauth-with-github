@@ -1,9 +1,18 @@
 import { GitItem } from "@/components/git-item";
 import { LogoutButtonGithub } from "@/components/logout-button-github";
+import { nextAuthConfig } from "@/lib/next-auth-option/next-auth-option";
+import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
-export default function Profile() {
+export default async function Profile() {
+  const session = await getServerSession(nextAuthConfig);
+
+  if (!session) {
+    redirect("/");
+  }
+
   return (
     <main className="w-full min-h-screen flex flex-col  items-center gap-6 p-12">
       <div className="flex flex-col justify-center items-center">

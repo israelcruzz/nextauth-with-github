@@ -1,7 +1,23 @@
 import { LoginButtonGithub } from "@/components/login-button-github";
+import { Metadata } from "next";
 import Image from "next/image";
+import { getServerSession } from "next-auth/next";
+import { nextAuthConfig } from "@/lib/next-auth-option/next-auth-option";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Login",
+};
+
+export default async function Home() {
+  const session = await getServerSession(nextAuthConfig);
+
+  if (session) {
+    console.log(session);
+
+    redirect("/info");
+  }
+
   return (
     <main className="realative flex w-full min-h-screen flex-col items-center justify-center p-24">
       <Image
